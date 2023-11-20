@@ -23,7 +23,7 @@ steps:
     TomcatUrl: 'http://36d8-2406-7400-56-8199-5ddb-33c3-aec7-8bf8.ngrok-free.app'
     Username: 'deployer'
     Password: 'deployer'
-    Warfile: '**/*.war'
+    Warfile: 'target/mvnwebapp.war'
     Context: '/azure-deploy'
     ServerVersion: '7OrAbove'
 # Build your Java project and run tests with Apache Maven.
