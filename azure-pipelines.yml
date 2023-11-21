@@ -20,3 +20,12 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
+
+- task: TomcatDeployment@1
+  inputs:
+    TomcatUrl: 'http://aca1-2406-7400-56-8199-355c-f483-9e3-6505.ngrok-free.app'
+    Username: 'deployer'
+    Password: 'deployer'
+    Warfile: 'target/mvnwebapp.war'
+    Context: '/azure-deploy'
+    ServerVersion: '7OrAbove'
