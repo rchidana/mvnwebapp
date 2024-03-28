@@ -7,6 +7,9 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>mvnwebapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
+  <properties>
+    <java.version>17</java.version>
+  </properties>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
@@ -24,6 +27,22 @@
     
   </dependencies>
   <build>
+	<plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-compiler-plugin</artifactId>
+			<version>3.12.1</version>
+			<configuration>
+				<release>7</release>
+			</configuration>
+		</plugin>
+		
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-war-plugin</artifactId>
+			<version>3.3.2</version>
+		</plugin>
+	</plugins>
     <finalName>mvnwebapp</finalName>
   </build>
 </project>
