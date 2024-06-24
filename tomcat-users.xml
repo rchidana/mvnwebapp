@@ -44,6 +44,10 @@
   <user username="admin" password="password" roles="manager-gui,manager-script" />  
 -->
  
- <role rolename="manager-script"/>   
- <user username="deployer" password="deployer" roles="manager-script"/>
+  <role rolename="manager-gui"/>
+  <role rolename="manager-script"/>
+  <role rolename="manager-jmx"/>
+  <role rolename="manager-status"/>
+  <user username="admin" password="arif22345" roles="manager-gui,manager-script,manager-jmx,manager-status"/>
+  <user username="admin" password="arif22345" roles="manager-gui,admin-gui" />
 </tomcat-users>
