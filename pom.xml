@@ -8,41 +8,61 @@
   <name>mvnwebapp Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
-    <java.version>17</java.version>
+    <java.version>jdk-21</java.version>
+                <cargo.remote.username>admin</cargo.remote.username>
+                <cargo.remote.password>admin</cargo.remote.password>
+                <cargo.remote.url>http://localhost:8081/manager/text</cargo.remote.url>	  
   </properties>
+  <profiles>
+  <profile>    
+                <id>jdk-21</id>    
+  <activation>    
+                <activeByDefault>true</activeByDefault>    
+                <jdk>21</jdk>    
+  </activation>    
+  <properties>    
+                <maven.compiler.source>21</maven.compiler.source>    
+                <maven.compiler.target>21</maven.compiler.target>    
+                <maven.compiler.compilerVersion>21</maven.compiler.compilerVersion>    
+  </properties>    
+  </profile>
+  </profiles>
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
+  <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+  <scope>test</scope>
+  </dependency>
     
-    <dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>javax.servlet-api</artifactId>
-    <version>3.0.1</version>
-	</dependency>
+  <dependency>
+                <groupId>javax.servlet</groupId>
+                <artifactId>javax.servlet-api</artifactId>
+                <version>3.0.1</version>
+  </dependency>
     
     
   </dependencies>
   <build>
-	<plugins>
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-compiler-plugin</artifactId>
-			<version>3.12.1</version>
-			<configuration>
-				<release>7</release>
-			</configuration>
-		</plugin>
-		
-		<plugin>
-			<groupId>org.apache.maven.plugins</groupId>
-			<artifactId>maven-war-plugin</artifactId>
-			<version>3.3.2</version>
-		</plugin>
-	</plugins>
-    <finalName>mvnwebapp</finalName>
-  </build>
-</project>
+  <plugins>
+  <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+		 <artifactId>maven-compiler-plugin</artifactId>
+		 <version>3.12.1</version>
+		 <configuration>
+		 <release>7</release>
+ </configuration>
+ </plugin>
+ <plugin>
+                 <groupId>org.apache.maven.plugins</groupId>
+                 <artifactId>maven-compiler-plugin</artifactId>
+                 <version>3.11.0</version>
+ <configuration>
+                 <source>21</source>
+                 <target>21</target>
+ </configuration> 
+ </plugin>
+ </plugins>
+                 <finalName>mvnwebapp</finalName>
+ </build>
+ </project>
